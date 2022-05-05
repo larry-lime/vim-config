@@ -1,0 +1,7 @@
+{
+    "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+    //"suggest.autoTrigger":"none", //Autocompletion suggestions
+    "signature.enable": false // The floating documentation window
+    //"diagnostic.messageTarget": "echo", //The floating error windows
+    //"suggest.floatEnable": false
+}
