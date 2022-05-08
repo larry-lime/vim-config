@@ -107,7 +107,15 @@ endif
 " -----------------------------------------------------------------
 
 nnoremap <leader>ff :Files<CR>
+nnoremap <leader>gf :GFiles<CR>
+nnoremap <leader>rg :Rg<CR>
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+" -----------------------------------------------------------------
+" GitGutter
+" -----------------------------------------------------------------
+nnoremap ]h <Plug>(GitGutterNextHunk)
+nnoremap [h <Plug>(GitGutterPrevHunk)
 
 " -----------------------------------------------------------------
 " NERDTree

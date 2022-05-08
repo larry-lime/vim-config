@@ -22,6 +22,7 @@ let g:gruvbox_contrast_dark = 'soft'
 " COLORSCHEME
 " -------------------------------------------------------------------------------
 colorscheme onedark
+"colorscheme onehalflight
 highlight clear SignColumn
 "highlight clear NumberColumn
 
