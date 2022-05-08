@@ -1,31 +1,59 @@
-# Easy Vim
+# Essential Vim
 
 ## My Config
+All the essential configurations needed to run Vim like an IDE. None of the fluff.
 
-These are my configurations for Neovim running in Ubuntu 20.04.4 LTS on Windows 10 in WSL 2. My configurations are quite minimal so it's great for people just starting out using Neovim. 
+<!-- TOC GFM -->
+* [Installation](#installation)
+* [Requirements](#requirements)
+* Basic Configurations 
+* Basic Keyboard Rempas
+    1. Basic Editor Features
+        + Something
+* [Plugins Keybindings](#plugins-keybindings)
+    - [Plugins List](#plugins)
 
-## Try out this config
+<!-- /TOC -->
 
-Make sure to remove or move your current `nvim` directory
+## Installation
+## Requirements
 
-```
-git clone https://github.com/larry-lime/nvim-config.git ~/.config/nvim
-```
+## Terminal 
+- Windows Terminal running Ubuntu 20.04 LTS in WSL 2
 
-Run `nvim` 
+## Plugins
 
-## Get healthy
+### IDE Features
+- 
+- NERDTree
+- COC
+- Autosave
+- Polygot
+- Vimspector
+- Tagbar
+- FZF
+- Anyfold
+- Neoterm
+- NERDCommenter
+- Vim-jsonc
 
-Open `nvim` and enter the following:
+### Themes
+- Onedark
+- Onehalf
+- Gruvbox
 
-```
-:checkhealth
-```
+### Git Integration
+- Git Branch
+- Git Gutter
+- Vim Fugitive
+    
+### Add-Ons
+- Vimwiki
+- Github Copilot
+- Polygot
 
-## Fonts
-
-- [A nerd font](https://github.com/ryanoasis/nerd-fonts)
-
-- [codicon](https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf)
-- [An emoji font](https://github.com/googlefonts/noto-emoji/blob/main/fonts/NotoColorEmoji.ttf)
-After moving fonts to `~/.local/share/fonts/`
+### Nice To Haves
+- Coc-Fzf
+- nvim-Transparent
+- Calendar.vim
+- Goyo

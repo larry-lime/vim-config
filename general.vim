@@ -184,77 +184,7 @@ nnoremap <leader>1 @1
 " -----------------------------------------------------------------
 nnoremap <leader>m :tabnew %<CR>
 nnoremap <leader>x :tabclose<CR>
-" -----------------------------------------------------------------
-" DISTRACTION FREE
-" -----------------------------------------------------------------
-let g:dfm_width = 0.4 "absolute width or percentage, like 0.7
-let g:dfm_height = 0.9
-let s:dfm_enabled = 0
 
-function! ToggleCodeFocus()
-  let l:w = g:dfm_width > 1 ? g:dfm_width : (winwidth('%') * g:dfm_width)
-  let l:margins = {
-	\ "l": ("silent leftabove " . float2nr((winwidth('%') - l:w) / 2 - 1) . " vsplit new"),
-	\ "h": ("silent rightbelow " . float2nr((winwidth('%') - l:w) / 2 - 1) . " vsplit new"),
-	\ "j": ("silent leftabove " . float2nr(winheight('%') * (1 - g:dfm_height) / 2 - 1) . " split new"),
-	\ "k": ("silent rightbelow " . float2nr(winheight('%') * (1 - g:dfm_height) / 2 - 1) . " split new"),
-	\ }
-  if (s:dfm_enabled == 0)
-    let s:dfm_enabled = 1
-    for key in keys(l:margins)
-      execute l:margins[key] . " | wincmd " . key
-    endfor
-    map j gj
-    map k gk
-  else
-    let s:dfm_enabled = 0
-    for key in keys(l:margins)
-      execute "wincmd " . key . " | close "
-    endfor
-    unmap j
-    unmap k
-  endif
-endfunction
-
-function! ToggleReadingMode()
-  let l:w = g:dfm_width > 1 ? g:dfm_width : (winwidth('%') * g:dfm_width)
-  let l:margins = {
-	\ "l": ("silent leftabove " . float2nr((winwidth('%') - l:w) / 2 - 1) . " vsplit new"),
-	\ "h": ("silent rightbelow " . float2nr((winwidth('%') - l:w) / 2 - 1) . " vsplit new"),
-	\ "j": ("silent leftabove " . float2nr(winheight('%') * (1 - g:dfm_height) / 2 - 1) . " split new"),
-	\ "k": ("silent rightbelow " . float2nr(winheight('%') * (1 - g:dfm_height) / 2 - 1) . " split new"),
-	\ }
-  if (s:dfm_enabled == 0)
-    let s:dfm_enabled = 1
-    for key in keys(l:margins)
-      execute l:margins[key] . " | wincmd " . key
-    endfor
-    set wrap
-    set linebreak
-    set nornu
-    set nonu
-    set laststatus=3
-    set breakindent
-    map j gj
-    map k gk
-  else
-    let s:dfm_enabled = 0
-    for key in keys(l:margins)
-      execute "wincmd " . key . " | close "
-    endfor
-    set nowrap
-    set nolinebreak
-    set rnu
-    set nu
-    set laststatus=3
-    set nobreakindent
-    unmap j
-    unmap k
-  endif
-endfunction
-
-nnoremap <silent> <Leader>y :call ToggleReadingMode()<CR>
-nnoremap <silent> <Leader>z :call ToggleCodeFocus()<CR>
 
 " -----------------------------------------------------------------
 " NO SHOW MODE
