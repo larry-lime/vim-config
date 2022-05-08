@@ -1,4 +1,4 @@
-"irline -------------------------------------------------------------------------------
+"------------------------------------------------------------------------------------
 "██████╗░██╗░░░░░██╗░░░██╗░██████╗░
 "██╔══██╗██║░░░░░██║░░░██║██╔════╝░
 "██████╔╝██║░░░░░██║░░░██║██║░░██╗░
@@ -42,6 +42,7 @@ Plug 'sheerun/vim-polyglot' " Polygot
 Plug 'antoinemadec/coc-fzf' " Coc-FZF
 Plug 'https://github.com/xiyaowong/nvim-transparent.git'
 Plug 'https://github.com/itchyny/calendar.vim.git'
+Plug 'junegunn/goyo.vim' " Goyo 
 
 " -------------------------------------------------------------------------------
 "  Disabled Plugins
