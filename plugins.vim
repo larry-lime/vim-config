@@ -87,8 +87,6 @@ nmap <leader>ra <Plug>(coc-rename)
 ""Formatting selected code.
 :command Format :call CocAction('format')
 :command Openpreview :CocCommand markdown-preview-enhanced.openPreview
-"xmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
 
 " -----------------------------------------------------------------
 " COC-FZF
@@ -128,9 +126,10 @@ map <leader>/ <Plug>NERDCommenterToggle
 " -----------------------------------------------------------------
 
 " Command Remaps
-nnoremap <leader>ff :Files<CR>
-nnoremap <leader>gf :GFiles<CR>
-nnoremap <leader>rg :Rg<CR>
+nnoremap <silent><leader>ff :Files<CR>
+nnoremap <silent><leader>gf :GFiles<CR>
+nnoremap <silent><leader>bl :Buffers<CR>
+nnoremap <silent><leader>rg :Rg<CR>
 
 " Adjust preview window size
 let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }

@@ -14,7 +14,7 @@
 syntax on
 set nocursorline
 set laststatus=3
-"set statusline
+set syntax=markdown
 set signcolumn=yes
 set showtabline=2
 set shiftwidth=4
@@ -42,45 +42,34 @@ set cmdheight=1
 set showcmd
 set hidden
 set nohlsearch
-"set noerrorbells
-"set statusline
-"set noshowmode
-"set cursorcolumn
-"set statusline+=%F
-"set updatetime=300
-"set shortmess+=c
-"set belloff=all
-"set clipboard=unnamedplus
 
 " -----------------------------------------------------------------
 "  SETTINGS
 " -----------------------------------------------------------------
 
-"let g:python3_host_prog = "~/AppData/Local/Microsoft/WindowsApps/python3.10.exe"
+" Set Leader Key
 let mapleader=" "
-tnoremap <Esc> <C-\><C-n>
-nnoremap <C-U> 0<C-U>
-nnoremap <C-D> 0<C-D>
+" Buffer Navigation
+nnoremap gb :bn<CR>
+nnoremap gB :bp<CR>
+nnoremap <silent><leader>oo :bd!<CR>
+nnoremap <leader>oa :%bd!\|e#\|bd#<CR>
 nnoremap <leader>qq :qa!<CR>
-" Surrounding
-"nnoremap <C-s> :w<CR>
+" Terminal Navigation
 tnoremap <Esc> <C-\><C-n>
-imap <C-s> <Esc>:w<CR>
+tnoremap <Esc> <C-\><C-n>
+" Make <C-D> & <C-U> more pleasant
 nnoremap <C-U> 0<C-U>
 nnoremap <C-D> 0<C-D>
-nnoremap <silent><leader>/ :noh<CR>
 " Renaming
 nnoremap <leader>rn *Ncgn
-nnoremap <leader>ra ""yiw:%s/<C-R>*
 " Surrounding quotes, brackets, and curly braces
-" Normal Mode
 nnoremap <leader>' ciw'<C-R>"'<Esc>
 nnoremap <leader>" ciw"<C-R>""<Esc>
 nnoremap <leader>( ciW(<C-R>")<Esc>F(
 nnoremap <leader>[ ciW[<C-R>"]<Esc>F[
 nnoremap <leader>{ ciW{<C-R>"}<Esc>
 nnoremap <leader>` ciw`<C-R>"`<Esc>
-" Visual Mode
 xnoremap <leader>' c'<C-R>"'<Esc>
 xnoremap <leader>" c"<C-R>""<Esc>
 xnoremap <leader>( c(<C-R>")<Esc>F(
@@ -94,7 +83,6 @@ inoremap <silent> <A-j> <Esc>:m .+1<CR>==
 inoremap <silent> <A-k> <Esc>:m .-2<CR>==
 vnoremap <silent> <A-j> :m '>+1<CR>gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv
-" Add in == to autoindent
 nnoremap <silent> <A-j> :m .+1<CR>
 nnoremap <silent> <A-k> :m .-2<CR>
 " Undo Breakpoints
@@ -113,26 +101,9 @@ vnoremap <A-l> g_
 " COMMANDS
 " -------------------------------------------------------------------------------
 
-":command Settings e C:\Users\larry\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
-:command Settings tabnew /mnt/c/Users/larry/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-:command Sumatra tabnew /mnt/c/Users/larry/AppData/Local/SumatraPDF/SumatraPDF-settings.txt
-
-" -------------------------------------------------------------------------------
-" BUFFERS
-" -------------------------------------------------------------------------------
-
-nnoremap gb :bn<CR>
-nnoremap gB :bp<CR>
-nnoremap <leader>oo :bd!<CR>
-nnoremap <leader>oa :%bd!\|e#\|bd#<CR>
-nnoremap <leader>wl :Windows<CR>
-nnoremap <silent><leader>bl :Buffers<CR>
-nnoremap <silent><leader>cl :Colors<CR>
-"
-" -----------------------------------------------------------------
-"  TERMINAL
-" -----------------------------------------------------------------
-
+:command Cpath let @" = expand("%")
+:command Cfile let @" = expand("%:p")
+:command Settings tabnew '/mnt/c/Users/larry/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json'
 " -----------------------------------------------------------------
 " SPLITS
 " -----------------------------------------------------------------
@@ -148,8 +119,6 @@ nnoremap <C-l> <C-w>l
 
 xnoremap <C-C> "+y
 xnoremap <C-V> "+p
-"nnoremap <C-C> :!/mnt/c/Users/larry/scoop/apps/neovim/0.6.1/bin/win32yank.exe -i --crlf<CR>
-"xnoremap <C-C> :!/mnt/c/Users/larry/scoop/apps/neovim/0.6.1/bin/win32yank.exe -i-crlf<CR>
 
 if has('wsl')
     let g:clipboard = {
@@ -182,9 +151,9 @@ nnoremap <leader>1 @1
 " -----------------------------------------------------------------
 " MAXIMIZE WINDOW
 " -----------------------------------------------------------------
+
 nnoremap <leader>m :tabnew %<CR>
 nnoremap <leader>x :tabclose<CR>
-
 
 " -----------------------------------------------------------------
 " NO SHOW MODE

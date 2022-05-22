@@ -21,7 +21,7 @@
     }
   },
 "python.formatting.autopep8Path": "/home/larrylime/.local/bin/autopep8",
-//"snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+"snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
 //"suggest.autoTrigger":"none", //Autocompletion suggestions
 "signature.enable": false // The floating documentation window
 //"diagnostic.messageTarget": "echo" //The floating error windows
