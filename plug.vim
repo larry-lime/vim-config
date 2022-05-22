@@ -19,7 +19,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc
 Plug 'https://github.com/preservim/tagbar.git' " Tagbar  
 Plug 'https://github.com/kassio/neoterm.git' " Neoterm 
 Plug 'preservim/nerdcommenter' " NERDCommenter 
-Plug 'junegunn/fzf.vim' " FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf' " FZF
 
 " -------------------------------------------------------------------------------
