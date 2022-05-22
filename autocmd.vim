@@ -27,5 +27,13 @@ augroup END
 augroup filetype_python
     autocmd!
     autocmd FileType python let b:tagbar_foldlevel = 99
-    autocmd FileType python nnoremap <silent> <leader>z :call FocusUpPyToggle()<CR>
+    autocmd FileType python nnoremap <silent> <leader>z :call FocusUpToggleNum()<CR>
+augroup END
+
+" -------------------------------------------------------------------------------
+" VIM
+" -------------------------------------------------------------------------------
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim nnoremap <silent> <leader>z :call FocusUpToggleNum()<CR>
 augroup END

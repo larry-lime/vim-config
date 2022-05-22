@@ -157,7 +157,7 @@ nnoremap [h <Plug>(GitGutterPrevHunk)
 " -----------------------------------------------------------------
 
 let g:focusup_py = 0
-function FocusUpPyToggle()
+function FocusUpToggleNum()
     if (g:focusup_py == 0)
         let b:focusup_py = 0
         set wrap | set linebreak | set bri 
