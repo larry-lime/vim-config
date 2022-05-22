@@ -3,6 +3,9 @@
 ## My Config
 All the essential configurations needed to run Vim like an IDE. None of the fluff.
 
+## Limitations of VimScript and why I'm transitioning to Luavim:
+While vimscript is very easy to learn and obviously built for Vim, it's really slow and the coc LSP for example is really slow
+
 <!-- TOC GFM -->
 * [Installation](#installation)
 * [Requirements](#requirements)
@@ -57,3 +60,5 @@ All the essential configurations needed to run Vim like an IDE. None of the fluf
 - nvim-Transparent
 - Calendar.vim
 - Goyo
+
+
