@@ -104,6 +104,7 @@ vnoremap <A-l> g_
 :command Cpath let @" = expand("%")
 :command Cfile let @" = expand("%:p")
 :command Settings tabnew '/mnt/c/Users/larry/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json'
+
 " -----------------------------------------------------------------
 " SPLITS
 " -----------------------------------------------------------------
@@ -178,5 +179,3 @@ function! ToggleHiddenAll()
 endfunction
 
 nnoremap <silent><A-z> :call ToggleHiddenAll()<CR>
-
-
