@@ -25,5 +25,3 @@ colorscheme onedark
 "colorscheme onehalflight
 highlight clear SignColumn
 "highlight clear NumberColumn
-function
-
