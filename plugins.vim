@@ -139,6 +139,7 @@ let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
 " -----------------------------------------------------------------
 
 nnoremap <silent><leader>ga :G add %<CR>
+nnoremap <silent><leader>gr :G reset %<CR>
 nnoremap <silent><leader>g. :G add .<CR> 
 nnoremap <silent><leader>gc :G commit \| startinsert<CR>
 nnoremap <silent><leader>gl :G log<CR>
@@ -165,10 +166,10 @@ function FocusUpToggleNum()
         nnoremap k gk
         nnoremap A g$a
         nnoremap I g^i
-        nnoremap <A-h> g^
-        nnoremap <A-l> g$
-        vnoremap <A-h> g^
-        vnoremap <A-l> g$
+        nnoremap <S-h> g^
+        nnoremap <S-l> g$
+        vnoremap <S-h> g^
+        vnoremap <S-l> g$
         :Goyo
         set nu | set rnu
     else
@@ -178,10 +179,10 @@ function FocusUpToggleNum()
         unmap k
         unmap A
         unmap I
-        nnoremap <A-h> ^
-        nnoremap <A-l> g_
-        vnoremap <A-h> ^
-        vnoremap <A-l> g_
+        nnoremap <S-h> ^
+        nnoremap <S-l> g_
+        vnoremap <S-h> ^
+        vnoremap <S-l> g_
         :Goyo
         set nu | set rnu
     endif

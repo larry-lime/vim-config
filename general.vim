@@ -92,10 +92,10 @@ inoremap [ [<C-G>u
 inoremap ( (<C-G>u
 nnoremap J mzJ`z
 " Jump to beginning and end of line
-nnoremap <A-h> ^
-nnoremap <A-l> g_
-vnoremap <A-h> ^
-vnoremap <A-l> g_
+nnoremap <S-h> ^
+nnoremap <S-l> g_
+vnoremap <S-h> ^
+vnoremap <S-l> g_
 
 function MakeSession()
     tabdo NERDTreeClose
@@ -114,10 +114,10 @@ nnoremap <leader>sl :source ./sessions/mysession.vim <CR>
 " -------------------------------------------------------------------------------
 " COMMANDS
 " -------------------------------------------------------------------------------
-
 :command Cpath let @" = expand("%")
 :command Cfile let @" = expand("%:p")
-:command Settings tabnew '/mnt/c/Users/larry/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json'
+:command Settings tabnew /mnt/c/Users/larry/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json 
+            \| let b:auto_save = 0
 
 " -----------------------------------------------------------------
 " SPLITS
@@ -160,27 +160,3 @@ noremap <silent> <C-Down> :resize +2<CR>
 " -----------------------------------------------------------------
 " MACROS | Preset Macros
 " -----------------------------------------------------------------
-
-" -----------------------------------------------------------------
-" NO SHOW MODE
-" -----------------------------------------------------------------
-let s:hidden_all = 0
-function! ToggleHiddenAll()
-    if s:hidden_all  == 0
-        let s:hidden_all = 1
-        set noshowmode
-        set noruler
-        set laststatus=3
-        set noshowcmd
-        set showtabline=0
-    else
-        let s:hidden_all = 0
-        set showmode
-        set ruler
-        set laststatus=3
-        set showtabline=2
-        set showcmd
-    endif
-endfunction
-
-nnoremap <silent><A-z> :call ToggleHiddenAll()<CR>
