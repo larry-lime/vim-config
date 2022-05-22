@@ -1,10 +1,12 @@
-
+"-----------------------------------------------------------------
 "██████╗░██╗░░░░░██╗░░░██╗░██████╗░
 "██╔══██╗██║░░░░░██║░░░██║██╔════╝░
 "██████╔╝██║░░░░░██║░░░██║██║░░██╗░
 "██╔═══╝░██║░░░░░██║░░░██║██║░░╚██╗
 "██║░░░░░███████╗╚██████╔╝╚██████╔╝
 "╚═╝░░░░░╚══════╝░╚═════╝░░╚═════╝░
+" -----------------------------------------------------------------
+
 " -------------------------------------------------------------------------------
 call plug#begin()
 " -------------------------------------------------------------------------------
@@ -20,7 +22,7 @@ Plug 'https://github.com/preservim/tagbar.git' " Tagbar
 Plug 'https://github.com/kassio/neoterm.git' " Neoterm 
 Plug 'preservim/nerdcommenter' " NERDCommenter 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf' " FZF
+Plug 'junegunn/fzf.vim' " FZF
 
 " -------------------------------------------------------------------------------
 " Language Support
@@ -66,6 +68,7 @@ Plug 'junegunn/goyo.vim' " Goyo
 "  Disabled Plugins
 " -------------------------------------------------------------------------------
 
+"Plug 'glepnir/dashboard-nvim'
 "Plug 'https://github.com/morhetz/gruvbox.git' " Gruvbox
 "Plug 'https://github.com/ray-x/starry.nvim.git' " Starry Themes
 "Plug 'karoliskoncevicius/vim-sendtowindow' " Send to Window

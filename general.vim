@@ -97,6 +97,20 @@ nnoremap <A-l> g_
 vnoremap <A-h> ^
 vnoremap <A-l> g_
 
+function MakeSession()
+    tabdo NERDTreeClose
+    tabn
+    if !isdirectory("./sessions")
+        call mkdir("./sessions", "p")
+        mksession! ./sessions/mysession.vim
+    else
+        mksession! ./sessions/mysession.vim
+    endif
+endfunction
+
+nnoremap <leader>ss :call MakeSession()<CR>
+nnoremap <leader>sl :source ./sessions/mysession.vim <CR>
+
 " -------------------------------------------------------------------------------
 " COMMANDS
 " -------------------------------------------------------------------------------
@@ -144,17 +158,8 @@ noremap <silent> <C-Up> :resize -2<CR>
 noremap <silent> <C-Down> :resize +2<CR>
 
 " -----------------------------------------------------------------
-" MACROS
+" MACROS | Preset Macros
 " -----------------------------------------------------------------
-" :let @a="iHello World!\<CR>bye\<Esc>"
-
-nnoremap <leader>1 @1
-" -----------------------------------------------------------------
-" MAXIMIZE WINDOW
-" -----------------------------------------------------------------
-
-nnoremap <leader>m :tabnew %<CR>
-nnoremap <leader>x :tabclose<CR>
 
 " -----------------------------------------------------------------
 " NO SHOW MODE

@@ -1,4 +1,4 @@
-" -----------------------------------------------------------------
+"-----------------------------------------------------------------
 "██████╗░██╗░░░░░██╗░░░██╗░██████╗░██╗███╗░░██╗░██████╗
 "██╔══██╗██║░░░░░██║░░░██║██╔════╝░██║████╗░██║██╔════╝
 "██████╔╝██║░░░░░██║░░░██║██║░░██╗░██║██╔██╗██║╚█████╗░
@@ -138,11 +138,11 @@ let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
 " Fugitive
 " -----------------------------------------------------------------
 
-nnoremap <leader>ga% :G add %<CR>
-nnoremap <leader>ga. :G add .<CR> 
-nnoremap <leader>gc :G commit<CR>
-nnoremap <leader>gl :G log<CR>
-nnoremap <leader>gd :G diff<CR>
+nnoremap <silent><leader>ga% :G add %<CR>
+nnoremap <silent><leader>ga. :G add .<CR> 
+nnoremap <silent><leader>gc :G commit<CR>
+nnoremap <silent><leader>gl :G log<CR>
+nnoremap <silent><leader>gd :G diff %<CR>
 
 " -----------------------------------------------------------------
 " GitGutter
@@ -221,6 +221,7 @@ nnoremap <silent> <leader>z :call FocusUpToggle()<CR>
 " NERDTree
 " -----------------------------------------------------------------
 
+let NERDTreeHighlightCursorline = 0
 let NERDTreeWinSize = 40
 nnoremap <silent><leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>eb :EditBookmarks
@@ -303,14 +304,6 @@ nnoremap <leader>pc :Tclose<CR>
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 
 " -----------------------------------------------------------------
- "NERDTree Highlighting | NERDTree Filetype Highlighting
-" -----------------------------------------------------------------
-
-"let g:NERDTreeFileExtensionHighlightFullName = 0
-"let g:NERDTreeExactMatchHighlightFullName = 0
-"let g:NERDTreePatternMatchHighlightFullName = 0
-
-" -----------------------------------------------------------------
 " Git Branch | Git branch detection
 " -----------------------------------------------------------------
 
@@ -382,9 +375,3 @@ vmap <Leader>tl <Plug>VimwikiToggleListItem
 " -----------------------------------------------------------------
 
 let g:transparent_enabled = v:true
-
-" -----------------------------------------------------------------
-" Calendar | Calendar for Vim
-" -----------------------------------------------------------------
-"let g:calendar_clock_12hour=1 
-"let g:calendar_google_calendar = 1
