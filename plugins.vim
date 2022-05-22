@@ -140,9 +140,10 @@ let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
 
 nnoremap <silent><leader>ga :G add %<CR>
 nnoremap <silent><leader>g. :G add .<CR> 
-nnoremap <silent><leader>gc :G commit<CR>
+nnoremap <silent><leader>gc :G commit \| startinsert<CR>
 nnoremap <silent><leader>gl :G log<CR>
 nnoremap <silent><leader>gd :G diff %<CR>
+nnoremap <silent><leader>gb :G branch<CR>
 
 " -----------------------------------------------------------------
 " GitGutter
