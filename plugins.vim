@@ -144,6 +144,7 @@ nnoremap <silent><leader>g. :G add .<CR>
 nnoremap <silent><leader>gc :G commit \| startinsert<CR>
 nnoremap <silent><leader>gl :G log<CR>
 nnoremap <silent><leader>gd :G diff %<CR>
+"nnoremap <silent><leader>gd :G push %<CR>
 nnoremap <silent><leader>gb :G branch<CR>
 
 " -----------------------------------------------------------------
