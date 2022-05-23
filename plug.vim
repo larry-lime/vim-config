@@ -13,16 +13,18 @@ call plug#begin()
 " IDE Features
 " -------------------------------------------------------------------------------
 
-Plug 'https://github.com/puremourning/vimspector.git' " Vimspector 
-Plug 'https://github.com/pseewald/vim-anyfold.git' " Anyflold
-Plug 'https://github.com/907th/vim-auto-save.git' " Auto Save  
-Plug 'https://github.com/preservim/nerdtree.git' " NERDTree 
+Plug 'puremourning/vimspector' " Vimspector 
+Plug 'pseewald/vim-anyfold' " Anyflold
+Plug '907th/vim-auto-save' " Auto Save  
+Plug 'preservim/nerdtree' " NERDTree 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc 
-Plug 'https://github.com/preservim/tagbar.git' " Tagbar  
-Plug 'https://github.com/kassio/neoterm.git' " Neoterm 
+Plug 'preservim/tagbar' " Tagbar  
+Plug 'kassio/neoterm' " Neoterm 
 Plug 'preservim/nerdcommenter' " NERDCommenter 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' " FZF
+Plug 'matze/vim-move' " Vim Move
+Plug 'tpope/vim-surround' " Vim Surround
 
 " -------------------------------------------------------------------------------
 " Language Support
@@ -34,8 +36,8 @@ Plug 'kevinoid/vim-jsonc' " JSON Vim support
 " Git
 " -------------------------------------------------------------------------------
 
-Plug 'https://github.com/airblade/vim-gitgutter.git' " Git Gutter
-Plug 'https://github.com/tpope/vim-fugitive.git' " Vim Fugitive
+Plug 'airblade/vim-gitgutter' " Git Gutter
+Plug 'tpope/vim-fugitive' " Vim Fugitive
 Plug 'Xuyuanp/nerdtree-git-plugin' " NERDTree Git Support
 Plug 'itchyny/vim-gitbranch' " Git branch
 
@@ -50,8 +52,8 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' } " One Half
 "  Aesthetics
 " -------------------------------------------------------------------------------
 
-Plug 'https://github.com/xiyaowong/nvim-transparent.git' " Nvim Transparent
-Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git' "NERDTree Highlighting
+Plug 'xiyaowong/nvim-transparent' " Nvim Transparent
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' "NERDTree Highlighting
 Plug 'ryanoasis/vim-devicons' " Devicons
 Plug 'antoinemadec/coc-fzf' " Coc-FZF
 
