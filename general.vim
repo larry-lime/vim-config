@@ -44,17 +44,48 @@ set hidden
 set nohlsearch
 
 " -----------------------------------------------------------------
-"  SETTINGS
+"  Functions
 " -----------------------------------------------------------------
+function LoadSession(name)
+    let b:sesh = join(["./.sessions/",a:name],"")
+    if filereadable(b:sesh)
+        silent! execute 'source ' b:sesh
+    endif
+endfunction
 
+function MakeSession(name)
+    tabdo NERDTreeClose
+    tabn
+    let b:sesh = join(["./.sessions/",a:name],"")
+    if !isdirectory("./.sessions")
+        call mkdir("./.sessions", "p")
+        silent! execute 'mksession! ' b:sesh
+    else
+        silent! execute 'mksession! ' b:sesh
+    endif
+endfunction
+
+function ExitVim()
+    call MakeSession('lastsession.vim')
+    silent! execute 'qa!'
+endfunction
+
+" -----------------------------------------------------------------
+"  Keyboard Shortcuts
+" -----------------------------------------------------------------
 " Set Leader Key
 let mapleader=" "
+nnoremap <leader>ss :call MakeSession('mysession.vim')<CR>
+nnoremap <leader>sl :call LoadSession('mysession.vim')<CR>
+nnoremap <leader>qq :call ExitVim()<CR>
 " Buffer Navigation
 nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
 nnoremap <silent><leader>oo :bd!<CR>
 nnoremap <leader>oa :%bd!\|e#\|bd#<CR>
-nnoremap <leader>qq :qa!<CR>
+" Open and Close tabs
+nnoremap <leader>tn :tabnew \| NERDTree<CR>
+nnoremap <leader>tc :tabclose<CR>
 " Terminal Navigation
 tnoremap <Esc> <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
@@ -96,20 +127,6 @@ nnoremap <S-h> ^
 nnoremap <S-l> g_
 vnoremap <S-h> ^
 vnoremap <S-l> g_
-
-function MakeSession()
-    tabdo NERDTreeClose
-    tabn
-    if !isdirectory("./sessions")
-        call mkdir("./sessions", "p")
-        mksession! ./sessions/mysession.vim
-    else
-        mksession! ./sessions/mysession.vim
-    endif
-endfunction
-
-nnoremap <leader>ss :call MakeSession()<CR>
-nnoremap <leader>sl :source ./sessions/mysession.vim <CR>
 
 " -------------------------------------------------------------------------------
 " COMMANDS
