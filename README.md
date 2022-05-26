@@ -3,16 +3,17 @@
 ## My Config
 All the essential configurations needed to run Vim like an IDE. None of the fluff. It should be noted however I will be transitioning to Lua-Vim in the near future.
 
-* [Installation](##Installation)
-* [Terminal](##Terminal)
-* [Keybindings](##Keybindings)
-* [Plugins](##Plugins)
-    * [IDE Features](##IDE Features)
-    * [Language Support](###Language Support)
-    * [Git Integration](###Git Integration)
-    * [Themes](###Themes)
-    * [Aesthetics](###Aesthetics)
-    * [Add-Ons](###Add-Ons)
+## Table of Contents
+2. [Installation](#installation)
+3. [Terminal](#terminal)
+4. [Keybindings](#keybindings)
+5. [Plugins](#plugins)
+    - [IDE Features](#ide-features)
+    - [Language Support](#language-support)
+    - [Git Integration](#git-integration)
+    - [Themes](#themes)
+    - [Aesthetics](#aesthetics)
+    - [Add-Ons](#add-ons)
 
 ## Installation
 ```
@@ -62,7 +63,7 @@ Vim-Plug is my plugin manager
 - Devicons -> Nerdfont Icons for Vim
 
     
-### Add-Ons
+### Add Ons
 - Vimwiki -> Personal Wiki
 - Github Copilot -> Github's AI Autocomplete
 - Goyo
