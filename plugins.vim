@@ -123,16 +123,21 @@ let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
 " Fugitive | Git Commands in Vim
 " -----------------------------------------------------------------
 
+function Gopen()
+    silent! execute "!brave.exe $(git config --get remote.origin.url)"
+endfunction
+
 nnoremap <leader>gaa :G add 
 nnoremap <leader>gp :G push origin 
-nnoremap <silent><leader>ga% :G add %<CR> :echo "Git Add Current File"<CR>
-nnoremap <silent><leader>gr% :G reset %<CR> :echo "Git Reset Current File"<CR>
-nnoremap <silent><leader>gr. :G reset .<CR> :echo "Git Reset All Files"<CR>
-nnoremap <silent><leader>ga. :G add .<CR> :echo "Git Add All Files"<CR>
+nnoremap <silent><leader>ga% :G add % \| echo "Git Add Currrent File"<CR>
+nnoremap <silent><leader>ga. :G add . \| echo "Git Add All Files"<CR>
+nnoremap <silent><leader>gr% :G reset % \| echo "Git Reset Currrent File"<CR>
+nnoremap <silent><leader>gr. :G reset . \| echo "Git Reset All Files"<CR>
 nnoremap <silent><leader>gs :G status<CR>
 nnoremap <silent><leader>gc :G commit \| startinsert<CR>
 nnoremap <silent><leader>gl :G log<CR>
 nnoremap <silent><leader>gb :G branch<CR>
+nnoremap <silent><leader>go :call Gopen()<CR>
 
 " -----------------------------------------------------------------
 " Gitgutter | Git Signs for Vim
