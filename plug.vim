@@ -32,9 +32,10 @@ Plug 'matze/vim-move' " Vim Move
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc
 Plug 'kevinoid/vim-jsonc' " JSON Vim support
+Plug 'sheerun/vim-polyglot' " Polygot
 
 " -------------------------------------------------------------------------------
-" Git
+" Git Integration
 " -------------------------------------------------------------------------------
 
 Plug 'Xuyuanp/nerdtree-git-plugin' " NERDTree Git Plugin
@@ -64,7 +65,6 @@ Plug 'antoinemadec/coc-fzf' " Coc-FZF
 
 Plug 'vimwiki/vimwiki' " Vimwiki
 Plug 'github/copilot.vim' " Copilot
-Plug 'sheerun/vim-polyglot' " Polygot
 Plug 'junegunn/goyo.vim' " Goyo 
 
 " -------------------------------------------------------------------------------
