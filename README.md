@@ -4,10 +4,10 @@
 All the essential configurations needed to run Vim like an IDE. None of the fluff. It should be noted however I will be transitioning to Lua-Vim in the near future.
 
 ## Table of Contents
-2. [Installation](#installation)
-3. [Terminal](#terminal)
-4. [Keybindings](#keybindings)
-5. [Plugins](#plugins)
+1. [Installation](#installation)
+2. [Terminal](#terminal)
+3. [Keybindings](#keybindings)
+4. [Plugins](#plugins)
     - [IDE Features](#ide-features)
     - [Language Support](#language-support)
     - [Git Integration](#git-integration)
