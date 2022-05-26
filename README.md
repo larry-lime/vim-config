@@ -15,7 +15,8 @@ All the essential configurations needed to run Vim like an IDE. None of the fluf
     * [Add-Ons](###Add-Ons)
 
 ## Installation
-```git clone https://github.com/larry-lime/nvim-config.git
+```
+git clone https://github.com/larry-lime/nvim-config.git
 ```
 
 ## Terminal 
