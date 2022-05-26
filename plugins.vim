@@ -123,10 +123,11 @@ let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
 " Fugitive | Git Commands in Vim
 " -----------------------------------------------------------------
 
-nnoremap <leader>ga :G add 
-nnoremap <silent><leader>g% :G add %<CR>
+nnoremap <leader>gaa :G add 
+nnoremap <leader>gp :G push origin 
+nnoremap <silent><leader>ga% :G add %<CR>
 nnoremap <silent><leader>gr :G reset %<CR>
-nnoremap <silent><leader>g. :G add .<CR> 
+nnoremap <silent><leader>ga. :G add .<CR> 
 nnoremap <silent><leader>gs :G status<CR> 
 nnoremap <silent><leader>gc :G commit \| startinsert<CR>
 nnoremap <silent><leader>gl :G log<CR>
