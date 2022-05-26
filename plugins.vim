@@ -8,16 +8,7 @@
 " -----------------------------------------------------------------
 
 " -----------------------------------------------------------------
-" Airline
-" -----------------------------------------------------------------
-
-"let g:airline#extensions#tabline#enabled = 0
-"let g:airline_disable_statusline = 1
-"let g:airline_powerline_fonts = 0
-"let g:airline#extensions#tagbar#enabled = 0
-
-" -----------------------------------------------------------------
-" ANYFOLD
+" ANYFOLD | Fold manager
 " -----------------------------------------------------------------
 
 filetype plugin indent on
@@ -25,14 +16,14 @@ autocmd Filetype * AnyFoldActivate
 set foldlevel=99
 
 " -----------------------------------------------------------------
-" AUTOSAVE
+" AUTOSAVE | Autosave for Vim
 " -----------------------------------------------------------------
 
 let g:auto_save = 1
 let g:auto_save_silent = 0
 
 " -----------------------------------------------------------------
-" COC
+" COC | LSP
 " -----------------------------------------------------------------
 let g:coc_config_home = '~/.config/nvim/'
 " Enable tab and shift-tab for completion shifting
@@ -64,10 +55,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Coc Commands
-nnoremap <silent> <leader>cf :CocFix<CR>
-nnoremap <leader>fm :call CocAction('format')<CR>
+nmap <silent> gf :CocFix<CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -83,20 +71,17 @@ endfunction
 
 " Symbol renaming.
 nmap <leader>ra <Plug>(coc-rename)
-
-""Formatting selected code.
-:command Format :call CocAction('format')
-:command Openpreview :CocCommand markdown-preview-enhanced.openPreview
+nmap <leader>fm :call CocAction('format')<CR>
 
 " -----------------------------------------------------------------
-" COC-FZF
+" COC-FZF | Show Coc Actions in FZF preview window
 " -----------------------------------------------------------------
 
 let g:coc_fzf_preview = ''
 let g:coc_fzf_opts = []
 
 " -----------------------------------------------------------------
-"  COPILOT
+"  COPILOT | AI Autocomplete
 " -----------------------------------------------------------------
 
 let g:copilot_enabled = v:false
@@ -106,23 +91,20 @@ nnoremap <silent><leader>cp :Copilot panel<CR>
 nnoremap <silent><leader>cs :echo g:copilot#Enabled()<CR>
 
 " -----------------------------------------------------------------
-" DEVICONS
+" DEVICONS | Show NerdFont Icons
 " -----------------------------------------------------------------
 
 let g:webdevicons_enable = 1
-if exists("g:loaded_webdevicons")
-   call webdevicons#refresh()
-endif
 
 " -----------------------------------------------------------------
-" NERDCommenter
+" NERDCommenter | Commenter Plugin
 " -----------------------------------------------------------------
 
 let g:NERDCreateDefaultMappings = 0
 map <leader>/ <Plug>NERDCommenterToggle
 
 " -----------------------------------------------------------------
-" FZF
+" FZF | Fuzzy Finder
 " -----------------------------------------------------------------
 
 " Command Remaps
@@ -130,39 +112,47 @@ nnoremap <silent><leader>ff :Files<CR>
 nnoremap <silent><leader>gf :GFiles<CR>
 nnoremap <silent><leader>bl :Buffers<CR>
 nnoremap <silent><leader>rg :Rg<CR>
+nnoremap <silent><leader>rg :Rg<CR>
+nnoremap <silent><leader>r* :execute 'Rg ' expand('<cword>')<CR>
+:command Todo :Rg TODO
 
 " Adjust preview window size
 let g:fzf_layout = { 'window': { 'width': 0.7, 'height': 0.6 } }
 
 " -----------------------------------------------------------------
-" Fugitive
+" Fugitive | Git Commands in Vim
 " -----------------------------------------------------------------
 
 nnoremap <leader>ga :G add 
 nnoremap <silent><leader>g% :G add %<CR>
 nnoremap <silent><leader>gr :G reset %<CR>
 nnoremap <silent><leader>g. :G add .<CR> 
+nnoremap <silent><leader>gs :G status<CR> 
 nnoremap <silent><leader>gc :G commit \| startinsert<CR>
 nnoremap <silent><leader>gl :G log<CR>
-nnoremap <silent><leader>gd :G diff %<CR>
-nnoremap <silent><leader>gp :G push origin HEAD<CR>
 nnoremap <silent><leader>gb :G branch<CR>
 
 " -----------------------------------------------------------------
-" GitGutter
+" Gitgutter | Git Signs for Vim
 " -----------------------------------------------------------------
 
+let g:gitgutter_map_keys = 0
+let g:gitgutter_preview_win_floating = 0
+nnoremap <silent><leader>gd :GitGutterDiffOrig<CR>
 nnoremap ]h <Plug>(GitGutterNextHunk)
 nnoremap [h <Plug>(GitGutterPrevHunk)
+nnoremap <leader>hp <Plug>(GitGutterPreviewHunk)
+nnoremap <leader>hu <Plug>(GitGutterUndoHunk)
+nnoremap <leader>hs <Plug>(GitGutterStageHunk)
 
 " -----------------------------------------------------------------
-" Goyo
+" Goyo | Distraction Free Mode
 " -----------------------------------------------------------------
 
 let g:focusup_py = 0
 function FocusUpToggleNum()
     if (g:focusup_py == 0)
-        let b:focusup_py = 0
+        let b:focusup_py = 1
         set wrap | set linebreak | set bri 
         nnoremap j gj
         nnoremap k gk
@@ -175,7 +165,7 @@ function FocusUpToggleNum()
         :Goyo
         set nu | set rnu
     else
-        let g:focusup_py = 1
+        let g:focusup_py = 0
         set nowrap | set nolinebreak | set bri
         unmap j
         unmap k
@@ -193,7 +183,7 @@ endfunction
 let g:focusup_md = 0
 function FocusUpToggle()
     if (g:focusup_md == 0)
-        let b:focusup_md = 0
+        let b:focusup_md = 1
         set wrap | set linebreak | set bri 
         nnoremap j gj
         nnoremap k gk
@@ -205,7 +195,7 @@ function FocusUpToggle()
         vnoremap <A-l> g$
         :Goyo
     else
-        let g:focusup_md = 1
+        let g:focusup_md = 0
         set nowrap | set nolinebreak | set bri
         unmap j
         unmap k
@@ -222,13 +212,15 @@ endfunction
 nnoremap <silent> <leader>z :call FocusUpToggle()<CR>
 
 " -----------------------------------------------------------------
-" NERDTree
+" NERDTree | Vim Filetree
 " -----------------------------------------------------------------
 
-let NERDTreeHighlightCursorline = 0
+"let NERDTreeHighlightCursorline = 0
 let NERDTreeWinSize = 40
 nnoremap <silent><leader>nt :NERDTreeToggle<CR>
+nnoremap <silent><A-n> :NERDTreeFocus<CR>
 nnoremap <leader>eb :EditBookmarks
+
 " NERDTRee Mark Bookmarks
 nnoremap <leader>bm0 :Bookmark [0]<CR>
 nnoremap <leader>bm1 :Bookmark [1]<CR>
@@ -240,6 +232,7 @@ nnoremap <leader>bm6 :Bookmark [6]<CR>
 nnoremap <leader>bm7 :Bookmark [7]<CR>
 nnoremap <leader>bm8 :Bookmark [8]<CR>
 nnoremap <leader>bm9 :Bookmark [9]<CR>
+
 " NERDTRee Open Bookmarks
 nnoremap <silent><leader>ob0 :OpenBookmark [0]<CR>
 nnoremap <silent><leader>ob1 :OpenBookmark [1]<CR>
@@ -265,7 +258,7 @@ nnoremap <leader>cb8 :ClearBookmarks [8]<CR>
 nnoremap <leader>cb9 :ClearBookmarks [9]<CR>
 
 " -----------------------------------------------------------------
-"  NEOTERM
+"  NEOTERM | Terminal Emulator
 " -----------------------------------------------------------------
 function IPythonR()
     let g:neoterm_size = 80
@@ -279,36 +272,22 @@ function IPythonB()
     rightbelow Tnew
 endfunction
 
-function Pwsh()
-    let g:neoterm_size = 13
-    let g:neoterm_shell = "powershell.exe"
-    rightbelow Tnew
-endfunction
-
-function Zsh()
-    let g:neoterm_size = 13
-    let g:neoterm_shell = "zsh"
-    rightbelow Tnew
-endfunction
-
 " Run Python code
 nnoremap <silent><leader>rp :let @1 = expand("%")<CR> :T %run <C-R>1<CR>
 
 " Terminal Commands
 nnoremap <leader>pr :call IPythonR()<CR>
 nnoremap <leader>pb :call IPythonB()<CR>
-nnoremap <leader>pp :call Zsh()<CR>
 nnoremap <leader>pc :Tclose<CR>
-:command Powershell :call Pwsh()
 
 " -----------------------------------------------------------------
- "NERDTree Git | NERDTree Git Support
+" NERDTree Git | NERDTree Git Support
 " -----------------------------------------------------------------
 
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 
 " -----------------------------------------------------------------
-" Git Branch | Git branch detection
+" Git Branch | My Statusline with Git integration
 " -----------------------------------------------------------------
 
 " Configure statusline with Gitbranch
@@ -319,6 +298,8 @@ set statusline+=\ %f
 set statusline+=%=
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
 set statusline+=\ %l/%L
 set statusline+=\ 
 
@@ -329,10 +310,9 @@ set statusline+=\
 let g:python_highlight_space_errors = 0
 
 " -----------------------------------------------------------------
-" TAGBAR
+" TAGBAR | Tagbar
 " -----------------------------------------------------------------
 
-"let g:tagbar_ctags_bin = '/mnt/c/Users/larry/ctags/'
 nnoremap <silent><leader>tb :TagbarToggle<CR>
 nnoremap <A-t> :TagbarOpen [j]<CR>
 let g:tagbar_width = 40
@@ -340,7 +320,7 @@ let g:tagbar_foldlevel = 0
 let g:tagbar_sort = 0
 
 " -----------------------------------------------------------------
-" VIMSPECTOR
+" VIMSPECTOR | Graphical Debugger
 " -----------------------------------------------------------------
 
 let g:vimspector_enable_mappings = 'HUMAN'
@@ -371,8 +351,6 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
             \ 'syntax': 'markdown', 'ext': '.md'}]
 nmap <Leader>tl <Plug>VimwikiToggleListItem
 vmap <Leader>tl <Plug>VimwikiToggleListItem
-"let g:vimwiki_conceallevel=0
-"let g:vimwiki_url_maxsave=50
 
 " -----------------------------------------------------------------
 " VIMTRANSPARENT | Enable Transparent Vim Background

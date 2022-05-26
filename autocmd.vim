@@ -13,7 +13,6 @@
 augroup filetype_vimwiki
     autocmd!
     autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
-    autocmd Filetype vimwiki let g:copilot_enabled = v:true
     autocmd Filetype vimwiki let b:coc_suggest_disable = 1
     autocmd Filetype vimwiki imap <silent><script><expr> <C-n> copilot#Accept("\<CR>")
     autocmd Filetype vimwiki let b:copilot_no_tab_map = v:true

@@ -55,7 +55,7 @@ endfunction
 
 function MakeSession(name)
     tabdo NERDTreeClose
-    tabn
+    tabdo TagbarClose
     let b:sesh = join(["./.sessions/",a:name],"")
     if !isdirectory("./.sessions")
         call mkdir("./.sessions", "p")
@@ -73,11 +73,12 @@ endfunction
 " -----------------------------------------------------------------
 "  Keyboard Shortcuts
 " -----------------------------------------------------------------
+
 " Set Leader Key
 let mapleader=" "
-nnoremap <leader>ss :call MakeSession('mysession.vim')<CR>
+nnoremap <leader>ss :call MakeSession('mysession.vim') \| tabn<CR>
 nnoremap <leader>sl :call LoadSession('mysession.vim')<CR>
-nnoremap <leader>qq :call ExitVim()<CR>
+nnoremap <silent><leader>qq :call ExitVim()<CR>
 " Buffer Navigation
 nnoremap gb :bn<CR>
 nnoremap gB :bp<CR>
@@ -86,14 +87,21 @@ nnoremap <leader>oa :%bd!\|e#\|bd#<CR>
 " Open and Close tabs
 nnoremap <leader>tn :tabnew \| NERDTree<CR>
 nnoremap <leader>tc :tabclose<CR>
+" Open Terminal Windows
+nnoremap <leader>ppr :vsplit \| set nonu \| set nornu \| terminal<CR>
+nnoremap <leader>ppb :split \| set nonu \| set nornu \|  terminal<CR>
+" Open Smaller Terminal Windows
+nnoremap <leader>tr :vsplit \| set nonu \| set nornu \| vertical resize -20 \| terminal<CR>
+nnoremap <leader>tt :split \| set nonu \| set nornu \| resize -20 \| terminal<CR>
 " Terminal Navigation
 tnoremap <Esc> <C-\><C-n>
 tnoremap <Esc> <C-\><C-n>
 " Make <C-D> & <C-U> more pleasant
-nnoremap <C-U> 0<C-U>
-nnoremap <C-D> 0<C-D>
+nnoremap <C-U> <C-U>zz
+nnoremap <C-D> <C-D>zz
 " Renaming
 nnoremap <leader>rn *Ncgn
+nnoremap <leader>v g_v^
 " Surrounding quotes, brackets, and curly braces
 nnoremap <leader>' ciw'<C-R>"'<Esc>
 nnoremap <leader>" ciw"<C-R>""<Esc>
@@ -107,15 +115,6 @@ xnoremap <leader>( c(<C-R>")<Esc>F(
 xnoremap <leader>[ c[<C-R>"]<Esc>F[
 xnoremap <leader>{ c{<C-R>"}<Esc>
 xnoremap <leader>` c`<C-R>"`<Esc>
-" Visual Mode Add-On
-nnoremap <leader>v g_v^
-" Shift text
-inoremap <silent> <A-j> <Esc>:m .+1<CR>==
-inoremap <silent> <A-k> <Esc>:m .-2<CR>==
-vnoremap <silent> <A-j> :m '>+1<CR>gv
-vnoremap <silent> <A-k> :m '<-2<CR>gv
-nnoremap <silent> <A-j> :m .+1<CR>
-nnoremap <silent> <A-k> :m .-2<CR>
 " Undo Breakpoints
 inoremap , ,<C-G>u
 inoremap [ [<C-G>u

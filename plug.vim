@@ -8,45 +8,46 @@
 " -----------------------------------------------------------------
 
 " -------------------------------------------------------------------------------
+
 call plug#begin()
+
 " -------------------------------------------------------------------------------
 " IDE Features
 " -------------------------------------------------------------------------------
 
-Plug 'puremourning/vimspector' " Vimspector 
+Plug 'puremourning/vimspector' " Vimspector
 Plug 'pseewald/vim-anyfold' " Anyflold
 Plug '907th/vim-auto-save' " Auto Save  
 Plug 'preservim/nerdtree' " NERDTree 
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc 
 Plug 'preservim/tagbar' " Tagbar  
 Plug 'kassio/neoterm' " Neoterm 
 Plug 'preservim/nerdcommenter' " NERDCommenter 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " FZF
 Plug 'junegunn/fzf.vim' " FZF
 Plug 'matze/vim-move' " Vim Move
-Plug 'tpope/vim-surround' " Vim Surround
 
 " -------------------------------------------------------------------------------
 " Language Support
 " -------------------------------------------------------------------------------
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Coc
 Plug 'kevinoid/vim-jsonc' " JSON Vim support
 
 " -------------------------------------------------------------------------------
 " Git
 " -------------------------------------------------------------------------------
 
+Plug 'Xuyuanp/nerdtree-git-plugin' " NERDTree Git Plugin
 Plug 'airblade/vim-gitgutter' " Git Gutter
 Plug 'tpope/vim-fugitive' " Vim Fugitive
-Plug 'Xuyuanp/nerdtree-git-plugin' " NERDTree Git Support
 Plug 'itchyny/vim-gitbranch' " Git branch
 
 " -------------------------------------------------------------------------------
 " Themes
 " -------------------------------------------------------------------------------
 
-Plug 'navarasu/onedark.nvim' " Onedark
-Plug 'sonph/onehalf', { 'rtp': 'vim' } " One Half
+Plug 'navarasu/onedark.nvim' " Onedark Theme
+Plug 'sonph/onehalf', { 'rtp': 'vim' } " Onehalf Light/Dark Theme
 
 " -------------------------------------------------------------------------------
 "  Aesthetics
